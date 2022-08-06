@@ -2,7 +2,7 @@
 """
 class BaseModel
 """
-from models import storage
+import models
 from uuid import uuid4
 from datetime import date
 
@@ -32,7 +32,7 @@ class BaseModel:
 
     def save(self):
         """ updates public instance attribute """
-        self.updated_at = datetime.now()
+        self.updated_at = date.now()
         models.storage.save
 
     def to_dict(self):
