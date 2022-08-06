@@ -4,8 +4,7 @@ class BaseModel
 """
 from models import storage
 from uuid import uuid4
-from datetime import datetime
-
+from datetime import date
 
 class BaseModel:
     """ Defines all common attributes/methods for
@@ -22,8 +21,8 @@ class BaseModel:
 
         else:
             self.id = str(uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.created_at = date.now()
+            self.updated_at = date.now()
             models.storage.new(self)
 
     def __str__(self):
